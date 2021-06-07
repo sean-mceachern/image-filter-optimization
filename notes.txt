@@ -1,0 +1,25 @@
+Notes for interview:
+
+1.) Removed any uneeded function call or arithmetic being performed inside of any loops and used a variable inside of the loop instead.
+
+
+2.) All work was done in the applyFilter function.
+
+
+3.) Unrolled the i and j "for" loop. and incremented each row and column individually in a 3x3 array. This increases performance because the system doesn't need to perform all the extra steps needed in a loop such as checking the values of i and j and increasing them every iteration.
+
+
+4.) moved the [plane] to the 3rd dimension of the array. This inreases performance because when it is in the first dimension the rows and columns are filled up one at a time then jumps to another plane. with this set up the entire first plane's row and columns are filled before jumping to the next plane.
+
+
+5.) add the line "#pragma omp parallel for" , this calls on the openMP to create multiple threads for the process to run simultaneously. the "#pragma omp parallel" creates the parallel thread and the "for" carries out the process through the threads.
+
+
+MakeFile:
+
+6.) change the -O0 tag in the CXXFLAGS to -O3. This increases the system optimization level automating system level tasks to increase performance. while this increases run time it also increases compile time.
+
+
+7.) added the -fopenmp tag in the CXXFLAGS to add the openMP library.
+
+
